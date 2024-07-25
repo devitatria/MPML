@@ -14,10 +14,10 @@ with st.form(key='prediction_form'):
     gender = st.selectbox('Gender', ['Male', 'Female'])
     monthly_income = st.selectbox('Monthly Income', ['No Income', 'Below Rs.10000', '10001 to 25000', '25001 to 50000', 'More than 50000'])
     family_size = st.number_input('Family Size', min_value=1, max_value=10)
-submit_button = st.form_submit_button(label='Predict')
+submitted = st.form_submit_button("Submit")
 
 # Predict button
-if st.button('Predict'):
+if submitted:
     features = np.array([[age, gender, monthly_income, family_size]])
     prediction = model.predict(features)
     st.write(f'The prediction is: {prediction[0]}')
