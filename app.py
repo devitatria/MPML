@@ -15,9 +15,9 @@ with st.form(key='prediction_form'):
         gender = st.selectbox('Gender', ['Female', 'Male'])
         monthly_income = st.selectbox('Monthly Income', ['No Income', 'Below Rs.10000', '10001 to 25000', '25001 to 50000', 'More than 50000'])
         family_size = st.number_input('Family Size', min_value=1, max_value=10)
-submit_button = st.form_submit_button(label='Predict')
+st.button = st.form_submit_button(label='Predict')
 
-        if submit_button:
+        if st.button:
             # Convert inputs into a DataFrame with correct column names
             gender_map = {'Female': 0, 'Male': 1}
             income_map = {
