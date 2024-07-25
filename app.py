@@ -14,7 +14,6 @@ with st.form(key='prediction_form'):
     gender = st.selectbox('Gender', ['Male', 'Female'])
     monthly_income = st.selectbox('Monthly Income', ['No Income', 'Below Rs.10000', '10001 to 25000', '25001 to 50000', 'More than 50000'])
     family_size = st.number_input('Family Size', min_value=1, max_value=10)
-submitted = st.form_submit_button("Submit")
 
 # Predict button
 if submitted:
