@@ -9,6 +9,7 @@ with open('model_knn.pkl', 'rb') as file:
 st.title('KNN Model Deployment')
 
 # Input fields for user data
+st.write('Enter the input features:')
 with st.form(key='prediction_form'):
     age = st.number_input('Age', min_value=0)
     gender = st.selectbox('Gender', ['Male', 'Female'])
@@ -16,7 +17,7 @@ with st.form(key='prediction_form'):
     family_size = st.number_input('Family Size', min_value=1, max_value=10)
 
 # Predict button
-if submitted:
+if st.button('Predict'):
     features = np.array([[age, gender, monthly_income, family_size]])
     prediction = model.predict(features)
     st.write(f'The prediction is: {prediction[0]}')
